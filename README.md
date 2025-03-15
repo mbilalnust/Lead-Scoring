@@ -1,60 +1,98 @@
-# Predictive Lead Scoring using ML
+# Predictive Lead Scoring using Machine Learning 🎯
 
-### Overview:
-Predictive Lead Scoring is a method used to analyze lead behavior in historical customer data to find patterns resulting in a positive business outcome, such as a closed deal with a client. In this study, I developed a lead scoring model using the [Bank Marketing](https://archive.ics.uci.edu/ml/datasets/bank+marketing) dataset, which contains the outcome of clients subscribing to a term deposit or not based on a direct marketing campaign performed by a Portuguese bank.
+[![Python 3.7.6](https://img.shields.io/badge/python-3.7.6-blue.svg)](https://www.python.org/downloads/release/python-376/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-**Model Design:**
+## 📋 Overview
 
-Since the evaluation of a classification model is tricky, I assumed that Losing a potential customer cost > Sales Resource Cost as a business objective, which statistically translates to developing a model that gives Low False Negatives and High True Positives, with balancing False Positives.
+This project implements a machine learning-based lead scoring system using the [Bank Marketing dataset](https://archive.ics.uci.edu/ml/datasets/bank+marketing). The model predicts the likelihood of a client subscribing to a term deposit based on direct marketing campaign data from a Portuguese banking institution.
 
-**Model Outcome:**
+### 🎯 Business Objective
+The model is optimized for minimizing the cost of losing potential customers while balancing sales resource allocation. Specifically, we prioritize:
+- Low False Negatives (not missing potential customers)
+- High True Positives (accurate identification of likely conversions)
+- Balanced False Positives (efficient resource utilization)
 
-To mimic a real-time model evaluation, I separated ~10,000 observation points from the dataset and trained on ~30,000 observation points. The following is the result of my trained LightGBM model on the hold-out dataset.
+## 📊 Model Performance
 
->  75.04% of Leads predicted by the model have resulted in conversion. And, a 29.56% False Positive rate, 24.95% False Negative Rate is observed.
+### Training Details
+- Training set: ~30,000 observations
+- Hold-out test set: ~10,000 observations
+- Model: LightGBM Classifier
 
+### Key Metrics
+- Conversion Rate: 75.04% of predicted leads resulted in successful conversions
+- False Positive Rate: 29.56%
+- False Negative Rate: 24.95%
 
-*Segmenting Leads based on Model Predictions:*
+### Lead Segmentation
+The model enables strategic lead segmentation for optimized resource allocation:
 
+<img src="https://github.com/abhijitpai000/predictive_lead_scoring/blob/master/report/figures/output_20_1.png" width="500" alt="Lead Segmentation Results" />
 
- <img src="https://github.com/abhijitpai000/predictive_lead_scoring/blob/master/report/figures/output_20_1.png" width="500" />
+## 🛠️ Installation & Setup
 
-## Data Source
-UCI Machine Learning Repository - [Bank Marketing](https://archive.ics.uci.edu/ml/datasets/bank+marketing) dataset.
+### Prerequisites
+- Python 3.7.6
+- Git
+- pip
 
-## Final Report & Package Walk-Through
+### Installation Steps
 
-To reproduce this study, use modules in 'src' directory of this repo. (setup instructions below) and walk-through of the package is presented in the [final report](https://github.com/abhijitpai000/predictive_lead_scoring/blob/master/report/README.md)
+1. Clone the repository:
+```bash
+git clone https://github.com/abhijitpai000/predictive_lead_scoring.git
+cd predictive_lead_scoring
+```
 
-## Setup instructions
+2. Download the dataset:
+- Visit the [Bank Marketing dataset](https://archive.ics.uci.edu/ml/datasets/bank+marketing) page
+- Download and place `bank-additional-full.csv` in the `datasets` directory
 
-#### Creating Python environment
+3. Set up a virtual environment:
+```bash
+pip install virtualenv
+virtualenv lead_scoring
+```
 
-This repository has been tested on Python 3.7.6.
+4. Activate the virtual environment:
+- On Windows:
+```bash
+lead_scoring\Scripts\activate
+```
+- On macOS/Linux:
+```bash
+source lead_scoring/bin/activate
+```
 
-1. Cloning the repository:
+5. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
 
-`git clone https://github.com/abhijitpai000/predictive_lead_scoring.git`
+## 📚 Documentation
 
-2. Navigate to the git clone repository.
+For detailed information about the implementation and analysis:
+- Check the [final report](https://github.com/abhijitpai000/predictive_lead_scoring/blob/master/report/README.md)
+- Explore the modules in the `src` directory
 
-`cd predictive_lead_scoring`
+## 📊 Data Source
 
-3. Download raw data from the data source link and place in "datasets" directory
+This project uses the [Bank Marketing dataset](https://archive.ics.uci.edu/ml/datasets/bank+marketing) from the UCI Machine Learning Repository, which contains:
+- Client demographic data
+- Campaign interaction details
+- Previous campaign outcomes
+- Economic indicators
+- Target variable: term deposit subscription (yes/no)
 
-4. Install [virtualenv](https://pypi.org/project/virtualenv/)
+## 🤝 Contributing
 
-`pip install virtualenv`
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-`virtualenv lead_scoring`
+## 📝 License
 
-5. Activate it by running:
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-`lead_scoring/Scripts/activate`
+## 📧 Contact
 
-6. Install project requirements by using:
-
-`pip install -r requirements.txt`
-
-**Note**
-* For make_dataset(), please place the raw data (bank-additional -> bank-additional-full.csv from data source) in the 'datasets' directory.
+For questions or feedback about this project, please open an issue in the repository.

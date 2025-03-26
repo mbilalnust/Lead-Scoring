@@ -4,7 +4,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## 📋 Overview
-
+[5 Pillars of lead scoring](https://www.gainsight.com/blog/the-5-pillars-for-product-led-growth-using-product-qualified-leads/)
 This project implements a machine learning-based lead scoring system using the [Bank Marketing dataset](https://archive.ics.uci.edu/ml/datasets/bank+marketing). The model predicts the likelihood of a client subscribing to a term deposit based on direct marketing campaign data from a Portuguese banking institution.
 
 ### 🎯 Business Objective
@@ -28,7 +28,7 @@ The model is optimized for minimizing the cost of losing potential customers whi
 ### Lead Segmentation
 The model enables strategic lead segmentation for optimized resource allocation:
 
-<img src="https://github.com/abhijitpai000/predictive_lead_scoring/blob/master/report/figures/output_20_1.png" width="500" alt="Lead Segmentation Results" />
+<img src="https://github.com/mbilalnust/predictive_lead_scoring/blob/master/report/figures/output_20_1.png" width="500" alt="Lead Segmentation Results" />
 
 ## 🛠️ Installation & Setup
 
